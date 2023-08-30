@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title>Prediccion de Riesgo</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Prediccion de Riesgo</h1>
+    <form action="/predict" method="post">
+
+      <label for="colegio">Tipo colegio:</label>
+      <select name="colegio" id="colegio" required>
+        <option value="0">Publico</option>
+        <option value="1">Privado</option>
+      </select><br><br>
+
+      <label for="estrato">Estrato:</label>
+      <select name="estrato" id="estrato" required>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select><br><br>
+
+      <label for="nmat">Nota de Matematicas (0 a 5):</label>
+      <input type="number" name="nmat" id="nmat" step="0.1" min="0.0" max="5.0" required><br><br>
+
+      <label for="nlecto">Nota de Lecto Escritura (0 a 5):</label>
+      <input type="number" name="nlecto" id="nlecto" step="0.1" min="0.0" max="5.0" required><br><br>
+
+      <label for="apoyo">Apoyo economico de padres:</label>
+      <select name="apoyo" id="apoyo" required>
+        <option value="0">No</option>
+        <option value="1">Sí</option>
+      </select><br><br>
+
+      <label for="grado">Grado:</label>
+      <select name="grado" id="grado" required>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+      </select><br><br>
+
+      <button type="submit">Realizar prediccion</button>
+    </form>
+  </div>
+</body>
+</html>
